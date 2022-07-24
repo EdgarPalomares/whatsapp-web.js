@@ -944,9 +944,6 @@ class Client extends EventEmitter {
      * @returns {Promise<Object|null>}
      */
     async getNumberId(number) {
-        if (!number.endsWith('@c.us')) {
-            number += '@c.us';
-        }
 
         return await this.pupPage.evaluate(async number => {
             const wid = window.Store.WidFactory.createWid(number);
